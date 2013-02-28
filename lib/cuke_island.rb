@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'thor'
 require 'thor/group'
 require 'fileutils'
@@ -5,7 +6,7 @@ require 'fileutils'
 class CukeIsland < Thor::Group
   include Thor::Actions
 
-  VERSION = "0.0.1"
+  VERSION = "0.0.2"
 
   argument :dir_name
 
@@ -17,8 +18,11 @@ class CukeIsland < Thor::Group
     self.destination_root = File.expand_path(dir_name, destination_root)
     make_empty_directory
     FileUtils.cd(destination_root)
-    gemfile_rakefile_cukeyml
+    gemfile_rake
     features_directory_and_files
+    inside '.' do
+      run 'bundle install'
+    end
   end
 
   protected
@@ -31,18 +35,18 @@ class CukeIsland < Thor::Group
     empty_directory 'features'
 
     inside 'features' do
-      template 'search.feature.off', 'search.feature'
+      template '../search.feature.off', 'search.feature'
       empty_directory 'support'
-      template 'support/env.rb', 'support/env.rb'
+      template '../support/env.rb', 'support/env.rb'
       empty_directory 'step_definitions'
-      template 'step_definitions/web_steps.rb'
+      template '../step_definitions/web_steps.rb', 'step_definitions/web_steps.rb'
     end
   end
 
   def gemfile_rake
     inside destination_root do
-      template 'Gemfile'
-      template 'Rakefile'
+      template '../Gemfile', 'Gemfile'
+      template '../Rakefile', "Rakefile"
     end
   end
 
