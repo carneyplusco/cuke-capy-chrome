@@ -1,7 +1,3 @@
-Given /^I am on the home page$/ do
-  visit('/ncr')
-end
-
 Given /^I am on (.+)$/ do |path|
   visit path
 end

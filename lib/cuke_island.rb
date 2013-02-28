@@ -6,7 +6,7 @@ require 'fileutils'
 class CukeIsland < Thor::Group
   include Thor::Actions
 
-  VERSION = "0.0.2"
+  VERSION = "0.0.3"
 
   argument :dir_name
 
@@ -35,7 +35,7 @@ class CukeIsland < Thor::Group
     empty_directory 'features'
 
     inside 'features' do
-      template '../search.feature.off', 'search.feature'
+      template '../search.feature.off', 'search.feature.sample'
       empty_directory 'support'
       template '../support/env.rb', 'support/env.rb'
       empty_directory 'step_definitions'
