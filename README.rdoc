@@ -20,6 +20,9 @@ Pull requests with updates/enhancements/bug fixes are always welcome!
 * Ruby http://www.ruby-lang.org/en/downloads/
 * Ruby Gems http://rubygems.org/
 * Bundler: sudo gem install bundler rake
+* qt - brew install qt
+* ffi - brew install libffi
+* chromedriver - brew install chromedriver
 
 == Configuration
 
