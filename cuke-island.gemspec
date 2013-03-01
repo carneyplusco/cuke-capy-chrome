@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.require_paths    = ["lib"]
   s.files = ["bin/cuke-island", "lib/cuke_island.rb", "Gemfile", "Rakefile"] + Dir.glob("features/**/*")
   s.has_rdoc         = true
+  s.extra_rdoc_files = ['README.rdoc']
   s.executables      = ["cuke-island"]
   s.add_dependency("thor", "0.17.0")
   s.add_dependency("rake", "10.0.3")
