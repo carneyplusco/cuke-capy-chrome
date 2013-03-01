@@ -20,4 +20,5 @@ Gem::Specification.new do |s|
   s.add_dependency("cucumber", "1.2.1")
   s.add_dependency("capybara-webkit", "0.14.2")
   s.add_dependency("rspec", "2.13.0")
+  s.add_dependency("poltergeist", "1.1.0")
 end
