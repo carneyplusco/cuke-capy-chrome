@@ -1,9 +1,21 @@
-= Standalone Cucumber Test Suite
+= Improved Standalone Cucumber Test Suite
 
 == Introduction
 
-Sometimes you inherit a non Rails or non Rack based web app such as PHP, Perl, Java / JEE, etc. I like using cucumber for functional testing so I put together this project structure to use as a starting point for testing non Ruby web based applications.
+We here at Carney+Co have not discovered how to limit ourselves to Rails only projects yet so we have come up with a simple generator gem that will create a standalone cucumber test inviroment in a folder of our choice. This is a kind of one stop method with the exception of some depdendencies to have the best and easiest to maniupulate test evnironment possible.
 
+I have expanded this work from the original Author Todd Huss from which this project is forked. I basically added in some extra smarts from the internets to integrate webkit and chromedriver to the installation
+
+http://blogs.kent.ac.uk/webdev/2012/08/02/using-capybara-webkit-with-cucumber-without-rails-or-rack/
+
+And
+
+http://collectiveidea.com/blog/archives/2011/09/27/use-chrome-with-cucumber-capybara/
+
+I have also upgraded all the associated gems from the parent project so this install is far easier to get running out of the box
+
+
+== From the original author
 I've included a simple search.feature examples that uses Google. To switch to use your own development or staging server adjust the URL in features/support/env.rb. I have this example project setup to use Capybara with Webdriver (Selenium) but you can easily switch this to use Culerity or Webrat by editing features/support/env.rb.
 
 Pull requests with updates/enhancements/bug fixes are always welcome!
@@ -26,11 +38,18 @@ Pull requests with updates/enhancements/bug fixes are always welcome!
 
 == Configuration
 
-* sudo bundle install
+* Bundle Install runs automatically once the test environment is setup
+
+== Setting up a test enviornmnet
+
+* gem install cuke-island
+* cuke-island <Directory to house testing files>
 
 == Running Features
 
-* To run all features: rake
+* To run all features: cucumber
+* Or to add some options: rake
+* To use bundled gems: bundle exec cucumber
 * To run a specific feature: cucumber features/search.feature
 
 == Debugging
