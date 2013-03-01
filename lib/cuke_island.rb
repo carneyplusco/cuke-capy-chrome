@@ -6,7 +6,7 @@ require 'fileutils'
 class CukeIsland < Thor::Group
   include Thor::Actions
 
-  VERSION = "0.0.4"
+  VERSION = "0.0.5"
 
   argument :dir_name
 
