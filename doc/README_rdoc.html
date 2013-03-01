@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./CukeIsland.html">CukeIsland</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-Improved+Standalone+Cucumber+Test+Suite">Improved Standalone Cucumber Test Suite</h1>
+
+<h2 id="label-Introduction">Introduction</h2>
+
+<p>We here at Carney+Co have not discovered how to limit ourselves to Rails
+only projects yet so we have come up with a simple generator gem that will
+create a standalone cucumber test inviroment in a folder of our choice.
+This is a kind of one stop method with the exception of some depdendencies
+to have the best and easiest to maniupulate test evnironment possible.</p>
+
+<p>I have expanded this work from the original Author Todd Huss from which
+this project is forked. I basically added in some extra smarts from the
+internets to integrate webkit and chromedriver to the installation</p>
+
+<p><a
+href="http://blogs.kent.ac.uk/webdev/2012/08/02/using-capybara-webkit-with-cucumber-without-rails-or-rack/">blogs.kent.ac.uk/webdev/2012/08/02/using-capybara-webkit-with-cucumber-without-rails-or-rack/</a></p>
+
+<p>And</p>
+
+<p><a
+href="http://collectiveidea.com/blog/archives/2011/09/27/use-chrome-with-cucumber-capybara/">collectiveidea.com/blog/archives/2011/09/27/use-chrome-with-cucumber-capybara/</a></p>
+
+<p>I have also upgraded all the associated gems from the parent project so
+this install is far easier to get running out of the box</p>
+
+<h2 id="label-From+the+original+author">From the original author</h2>
+
+<p>I’ve included a simple search.feature examples that uses Google. To switch
+to use your own development or staging server adjust the URL in
+features/support/env.rb. I have this example project setup to use Capybara
+with Webdriver (Selenium) but you can easily switch this to use Culerity or
+Webrat by editing features/support/env.rb.</p>
+
+<p>Pull requests with updates/enhancements/bug fixes are always welcome!</p>
+
+<h2 id="label-Project+Layout">Project Layout</h2>
+<ul><li>
+<p>features/*.feature : cucumber features</p>
+</li><li>
+<p>features/step_definitions/web_steps.rb : generic steps that apply to all
+features</p>
+</li><li>
+<p><a href="http://feature">features/step_definintions/</a> : steps specific
+to an individual feature file</p>
+</li><li>
+<p>support/env.rb : configures the driver and the hostname to use</p>
+</li></ul>
+
+<h2 id="label-Prerequisites">Prerequisites</h2>
+<ul><li>
+<p>Ruby <a
+href="http://www.ruby-lang.org/en/downloads/">www.ruby-lang.org/en/downloads/</a></p>
+</li><li>
+<p>Ruby Gems <a href="http://rubygems.org/">rubygems.org/</a></p>
+</li><li>
+<p>Bundler: sudo gem install bundler rake</p>
+</li><li>
+<p>qt - brew install qt</p>
+</li><li>
+<p>ffi - brew install libffi</p>
+</li><li>
+<p>chromedriver - brew install chromedriver</p>
+</li></ul>
+
+<h2 id="label-Configuration">Configuration</h2>
+<ul><li>
+<p>Bundle Install runs automatically once the test environment is setup</p>
+</li></ul>
+
+<h2 id="label-Setting+up+a+test+enviornmnet">Setting up a test enviornmnet</h2>
+<ul><li>
+<p>gem install cuke-island</p>
+</li><li>
+<p>cuke-island &lt;Directory to house testing files&gt;</p>
+</li></ul>
+
+<h2 id="label-Running+Features">Running Features</h2>
+<ul><li>
+<p>To run all features: cucumber</p>
+</li><li>
+<p>Or to add some options: rake</p>
+</li><li>
+<p>To use bundled gems: bundle exec cucumber</p>
+</li><li>
+<p>To run a specific feature: cucumber features/search.feature</p>
+</li></ul>
+
+<h2 id="label-Debugging">Debugging</h2>
+<ul><li>
+<p>To debug a specific step call save_and_open_page within the step</p>
+</li></ul>
+
+<h2 id="label-Additional+Documentation">Additional Documentation</h2>
+<ul><li>
+<p><a href="http://cukes.info">cukes.info</a> (for general cucumber
+information)</p>
+</li><li>
+<p><a
+href="http://github.com/jnicklas/capybara">github.com/jnicklas/capybara</a>
+(for actions such as click_link, click_button, etc...)</p>
+</li></ul>
+
+<h2 id="label-Contributors">Contributors</h2>
+<ul><li>
+<p><a
+href="http://groups.google.com/group/cukes/browse_thread/thread/297163800eaf2968?pli=1">Cucumber
+mailing list for the project structure</a></p>
+</li><li>
+<p><a href="http://gabrito.com">Todd Huss</a></p>
+</li></ul>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
