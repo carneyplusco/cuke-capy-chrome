@@ -5,14 +5,14 @@ Gem::Specification.new do |s|
   s.name        = 'cuke-island'
   s.version     = CukeIsland::VERSION
   s.date        = '2013-02-28'
-  s.summary     = "Standalone webdriver"
-  s.description = "Standalone generator for a standalone cucumber capybara chrome test enviroment"
+  s.summary     = "Standalone webdriver generator"
+  s.description = "Standalone generator for a lightly configured cucumber capybara chromedriver test enviroment: cuke-island <test folder>"
   s.authors     = ["Paul Scarrone", "Todd Huss"]
   s.email       = 'paul.scarrone@gmail.com'
   s.homepage    = "https://github.com/ninjapanzer/cuke-capy-chrome"
   s.require_paths    = ["lib"]
   s.files = ["bin/cuke-island", "lib/cuke_island.rb", "Gemfile", "Rakefile"] + Dir.glob("features/**/*")
-  s.has_rdoc         = false
+  s.has_rdoc         = true
   s.executables      = ["cuke-island"]
   s.add_dependency("thor", "0.17.0")
   s.add_dependency("rake", "10.0.3")
