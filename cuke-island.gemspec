@@ -4,7 +4,7 @@ require File.expand_path(File.dirname(__FILE__) + "/lib/cuke_island")
 Gem::Specification.new do |s|
   s.name        = 'cuke-island'
   s.version     = CukeIsland::VERSION
-  s.date        = '2013-02-28'
+  s.date        = '2013-03-19'
   s.summary     = "Standalone webdriver generator"
   s.description = "Standalone generator for a lightly configured cucumber capybara chromedriver test enviroment: cuke-island <test folder>"
   s.authors     = ["Paul Scarrone", "Todd Huss"]
