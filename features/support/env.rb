@@ -23,4 +23,4 @@ Capybara.javascript_driver = :chrome
 
 
 
-World(Capybara) 
+World(Capybara)
