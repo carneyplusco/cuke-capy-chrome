@@ -9,7 +9,7 @@ class CukeIsland < Thor::Group
   VERSION = "0.0.6"
 
   argument :dir_name
-  argument :hostdomain
+  argument :hostdomain, :optional => true
 
   def self.source_root
     File.join(File.dirname(__FILE__), '..', 'features')
@@ -39,7 +39,7 @@ class CukeIsland < Thor::Group
       template '../search.feature.off', 'search.feature.sample'
       empty_directory 'support'
       template '../support/env.rb', 'support/env.rb'
-      unless hostdomain == ""
+      unless hostdomain.nil?
         gsub_file("support/env.rb", "http://www.google.com", hostdomain)
       end
       empty_directory 'step_definitions'
