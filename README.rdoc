@@ -43,7 +43,7 @@ Pull requests with updates/enhancements/bug fixes are always welcome!
 == Setting up a test enviornmnet
 
 * gem install cuke-island
-* cuke-island <Directory to house testing files>
+* cuke-island <Directory to house testing files> [<Domain Name (http://google.com)>]
 
 == Running Features
 

@@ -6,9 +6,10 @@ require 'fileutils'
 class CukeIsland < Thor::Group
   include Thor::Actions
 
-  VERSION = "0.0.5"
+  VERSION = "0.0.6"
 
   argument :dir_name
+  argument :hostdomain, :optional => true
 
   def self.source_root
     File.join(File.dirname(__FILE__), '..', 'features')
@@ -38,6 +39,9 @@ class CukeIsland < Thor::Group
       template '../search.feature.off', 'search.feature.sample'
       empty_directory 'support'
       template '../support/env.rb', 'support/env.rb'
+      unless hostdomain.nil?
+        gsub_file("support/env.rb", "http://www.google.com", hostdomain)
+      end
       empty_directory 'step_definitions'
       template '../step_definitions/web_steps.rb', 'step_definitions/web_steps.rb'
     end
