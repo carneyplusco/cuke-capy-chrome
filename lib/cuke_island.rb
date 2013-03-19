@@ -44,6 +44,7 @@ class CukeIsland < Thor::Group
       end
       empty_directory 'step_definitions'
       template '../step_definitions/web_steps.rb', 'step_definitions/web_steps.rb'
+      template '../step_definitions/file_steps.rb', 'step_definitions/file_steps.rb'
     end
   end
 

@@ -70,3 +70,5 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+require_relative 'file_steps.rb'
