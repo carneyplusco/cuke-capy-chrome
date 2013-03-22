@@ -1,9 +1,12 @@
-When /^I upload a file with valid data for 3 new products$/ do
-  attach_file(:csv_file, File.join(RAILS_ROOT, 'features', 'upload-files', 'products_csv_ok.csv'))
-  click_button "Send file"
+Then /^I should get a download with the filename "([^\"]*)"$/ do |filename|
+  download_name.should include filename
 end
- 
-When /^I upload a malformed file$/ do
-  attach_file(:csv_file, File.join(RAILS_ROOT, 'features', 'upload-files', 'products_csv_bad.csv'))
-  click_button "Send file"
+
+When /^I upload a downloaded file to "([^\"]*)"$/ do |field|
+	#downloads.include? filename
+	attach_file(field, downloads.first)
+end
+
+Then /^I should clear downloads$/ do
+	clear_downloads
 end

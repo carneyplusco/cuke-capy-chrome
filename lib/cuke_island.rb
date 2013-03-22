@@ -6,7 +6,7 @@ require 'fileutils'
 class CukeIsland < Thor::Group
   include Thor::Actions
 
-  VERSION = "0.0.6"
+  VERSION = "0.0.7"
 
   argument :dir_name
   argument :hostdomain, :optional => true
@@ -34,6 +34,7 @@ class CukeIsland < Thor::Group
 
   def features_directory_and_files
     empty_directory 'features'
+    empty_directory 'downloads'
 
     inside 'features' do
       template '../search.feature.off', 'search.feature.sample'
