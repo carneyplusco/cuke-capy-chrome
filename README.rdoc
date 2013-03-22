@@ -20,8 +20,11 @@ I have also upgraded all the associated gems from the parent project so this ins
 == Changelog
 
 0.0.4 First Version
+
 0.0.5 Added more web_steps
+
 0.0.6 Configuration of Capybara.app_host from command line and existing deployed test instance upgrade strategy
+
 0.0.7 File download handling through file_steps - This provides a waiting mechanism inspired by http://collectiveidea.com/blog/archives/2012/01/27/testing-file-downloads-with-capybara-and-chromedriver/
 
 == From the original author
