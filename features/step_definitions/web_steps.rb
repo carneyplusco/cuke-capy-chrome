@@ -48,7 +48,6 @@ end
 When /^I sign in as "(.*?)"$/ do |arg1|
   fill_in("username", :with => arg1.split("/")[0])
   fill_in("password", :with => arg1.split("/")[1])
-  click_button('Login')
 end
 
 When /^I sign into facebook as "(.*?)"$/ do |arg1|
@@ -61,6 +60,12 @@ When /^I click the "([^"]*)" link$/ do |link_text|
   click_link link_text
 end
 
+When /^I click the first "([^"]*)" link$/ do |link_text|
+  first(:link, link_text).click
+end
+
+
+#clicks a button with the id specified by button_text. You must have javascript enabled (@javascript at top of feature) to use this webstep
 When /^I click the "([^"]*)" button$/ do |button_text|
   click_button button_text
 end
@@ -70,5 +75,3 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
-
-require_relative 'file_steps.rb'

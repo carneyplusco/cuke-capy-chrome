@@ -2,9 +2,11 @@
 
 == Introduction
 
-We here at Carney+Co have not discovered how to limit ourselves to Rails only projects yet so we have come up with a simple generator gem that will create a standalone cucumber test inviroment in a folder of our choice. This is a kind of one stop method with the exception of some depdendencies to have the best and easiest to maniupulate test evnironment possible.
+We here at {Carney+Co}[http://carney.co/] have not discovered how to limit ourselves to Rails only projects yet so we have come up with a simple generator gem that will create a standalone cucumber test inviroment in a folder of our choice. This is a kind of one stop method with the exception of some depdendencies to have the best and easiest to maniupulate test evnironment possible.
 
-I have expanded this work from the original Author Todd Huss from which this project is forked. I basically added in some extra smarts from the internets to integrate webkit and chromedriver to the installation
+I have expanded this work from the original Author Todd Huss from which this project is forked. I basically added in some extra smarts from the internets to integrate webkit and chromedriver to the installation.
+
+Some enhancements over the parent are a nice growing list of generic web_steps and file handling capabilities for downloading and uploading files to your sites.
 
 http://blogs.kent.ac.uk/webdev/2012/08/02/using-capybara-webkit-with-cucumber-without-rails-or-rack/
 
@@ -14,6 +16,13 @@ http://collectiveidea.com/blog/archives/2011/09/27/use-chrome-with-cucumber-capy
 
 I have also upgraded all the associated gems from the parent project so this install is far easier to get running out of the box
 
+
+== Changelog
+
+0.0.4 First Version
+0.0.5 Added more web_steps
+0.0.6 Configuration of Capybara.app_host from command line and existing deployed test instance upgrade strategy
+0.0.7 File download handling through file_steps - This provides a waiting mechanism inspired by http://collectiveidea.com/blog/archives/2012/01/27/testing-file-downloads-with-capybara-and-chromedriver/
 
 == From the original author
 I've included a simple search.feature examples that uses Google. To switch to use your own development or staging server adjust the URL in features/support/env.rb. I have this example project setup to use Capybara with Webdriver (Selenium) but you can easily switch this to use Culerity or Webrat by editing features/support/env.rb.
@@ -44,6 +53,7 @@ Pull requests with updates/enhancements/bug fixes are always welcome!
 
 * gem install cuke-island
 * cuke-island <Directory to house testing files> [<Domain Name (http://google.com)>]
+* * This second option will replace the Capybara.app_host = 'http://www.google.com' with your value.
 
 == Running Features
 
