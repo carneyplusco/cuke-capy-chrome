@@ -8,8 +8,13 @@ module DownloadHelpers
   TIMEOUT = 120
   #Put downloads at the same 
   PATH    = File.expand_path (File.dirname(__FILE__)) + "/../../downloads"
-
+  FEATURES_PATH = File.expand_path (File.dirname(__FILE__)) + "/../.."
+  
   extend self
+
+  def features rel_path
+    Dir[FEATURES_PATH + "/" + rel_path]
+  end
 
   def downloads
     Dir[PATH + "/**"]
