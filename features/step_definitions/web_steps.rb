@@ -60,6 +60,17 @@ When /^I click the "([^"]*)" link$/ do |link_text|
   click_link link_text
 end
 
+#Got the Idea from http://jasonneylon.wordpress.com/2011/02/16/selecting-from-a-dropdown-generically-with-capybara/
+When /^I select option "([^"]*)" from "([^"]*)"$/ do |index, field|
+  option_xpath = "//*[@id='#{field}']/option[#{index}]"
+  html_option = find(:xpath, option_xpath).text
+  select(html_option, :from => field)
+end
+
+When /^I select option value "([^"]*)" from "([^"]*)"$/ do |value, field|
+  page.find_by_id(field).find("option[value='#{value}']").select_option
+end
+
 When /^I click the first "([^"]*)" link$/ do |link_text|
   first(:link, link_text).click
 end
