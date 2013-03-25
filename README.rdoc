@@ -19,13 +19,15 @@ I have also upgraded all the associated gems from the parent project so this ins
 
 == Changelog
 
-0.0.4 First Version
+0.0.8 Added file features for static files not previously downloaded and a simple helper to path to those files. Also began CSS class matching of elements by id. Added web_steps for select option handling
 
-0.0.5 Added more web_steps
+0.0.7 File download handling through file_steps - This provides a waiting mechanism inspired by http://collectiveidea.com/blog/archives/2012/01/27/testing-file-downloads-with-capybara-and-chromedriver/
 
 0.0.6 Configuration of Capybara.app_host from command line and existing deployed test instance upgrade strategy
 
-0.0.7 File download handling through file_steps - This provides a waiting mechanism inspired by http://collectiveidea.com/blog/archives/2012/01/27/testing-file-downloads-with-capybara-and-chromedriver/
+0.0.5 Added more web_steps
+
+0.0.4 First Version
 
 == From the original author
 I've included a simple search.feature examples that uses Google. To switch to use your own development or staging server adjust the URL in features/support/env.rb. I have this example project setup to use Capybara with Webdriver (Selenium) but you can easily switch this to use Culerity or Webrat by editing features/support/env.rb.

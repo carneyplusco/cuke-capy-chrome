@@ -6,7 +6,7 @@ require 'fileutils'
 class CukeIsland < Thor::Group
   include Thor::Actions
 
-  VERSION = "0.0.7"
+  VERSION = "0.0.8"
 
   argument :dir_name
   argument :hostdomain, :optional => true
@@ -46,6 +46,7 @@ class CukeIsland < Thor::Group
       empty_directory 'step_definitions'
       template '../step_definitions/web_steps.rb', 'step_definitions/web_steps.rb'
       template '../step_definitions/file_steps.rb', 'step_definitions/file_steps.rb'
+      template '../step_definitions/css_steps.rb', 'step_definitions/css_steps.rb'
     end
   end
 
