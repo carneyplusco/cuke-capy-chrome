@@ -72,7 +72,7 @@ World(Capybara)
 World(DownloadHelpers)
 
 at_exit do
-  clear_downloads
+  DownloadHelpers.clear_downloads
 end
 
 AfterStep('@pause') do
